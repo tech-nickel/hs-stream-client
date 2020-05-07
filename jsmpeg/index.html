@@ -4,7 +4,7 @@
 <head>
 	
 	<meta charset="UTF-8">
-	<meta name="author" content="Nicola Jaeger">
+	<meta name="author" content="Nicola Jaeger mail@jaegernicola.de">
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 	<link rel="stylesheet" href="style/w3.css"> 
 	<title>HS Crane Stream Client</title>
@@ -28,6 +28,30 @@
 		img {
 		  max-width: 100%;
  		  height: auto;
+		}
+		.btn-group {
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border: 1px solid;
+                }		
+		.btn-group .button {
+ 		  background-color: white;
+		  border: none;
+		  color: black;
+		  padding: 15px 32px;
+		  text-align: center;		  
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  cursor: pointer;
+		  float: left;
+		}
+
+		.btn-group .button:hover {
+		  background-color: #002d45;
+		  color: white;
 		}
 	</style>
 	</style>
@@ -59,52 +83,50 @@
 	
 </head>
 <body>
-	<br>	
-	<div class="w3-dropdown-hover">
-  		<button class="w3-button">Select Crane Cam!</button>
-		<div class="w3-dropdown-content w3-bar-block w3-border">
-			<a href="#" class="w3-bar-item w3-button" onclick="camOption('cam1')">Crane 1</a>
-			<a href="#" class="w3-bar-item w3-button" onclick="camOption('cam2')">Crane 2</a>
-			<a href="#" class="w3-bar-item w3-button" onclick="camOption('cam3')">Crane 3</a>
-			<a href="#" class="w3-bar-item w3-button" onclick="camOption()">All</a>
-  		</div>
+	<br>
+	<div class="btn-group">
+  		<button class="button" onclick="camOption('cam1')">Crane 1</button>
+  		<button class="button" onclick="camOption('cam2')">Crane 2</button>
+  		<button class="button" onclick="camOption('cam3')">Crane 3</button>
+  		<button class="button" onclick="camOption()">All</button>
 	</div>
-	
+	<br>	
+
 	<div id="cam1">
-	<h2>Crane 1</h2>
-	<canvas id="video-canvas1" width="200" height="100"></canvas>
-	<script type="text/javascript" src="jsmpeg.min.js"></script>
-	<script type="text/javascript">
-		var canvas = document.getElementById('video-canvas1');
-		var url = 'ws://'+document.location.hostname+':8082/';
-		var player = new JSMpeg.Player(url, {canvas: canvas});
-	</script>
+		<h2>Crane 1</h2>
+		<canvas id="video-canvas1" width="200" height="100"></canvas>
+		<script type="text/javascript" src="jsmpeg.min.js"></script>
+		<script type="text/javascript">
+			var canvas = document.getElementById('video-canvas1');
+			var url = 'ws://'+document.location.hostname+':8082/';
+			var player = new JSMpeg.Player(url, {canvas: canvas});
+		</script>
 	</div>
 
 	<div id="cam2">
-	<h2>Crane 2</h2>
-	<canvas id="video-canvas2" width="200" height="100"></canvas>
-        <script type="text/javascript" src="jsmpeg.min.js"></script>
-        <script type="text/javascript">
-                var canvas = document.getElementById('video-canvas2');
-                var url = 'ws://'+document.location.hostname+':8084/';
-                var player = new JSMpeg.Player(url, {canvas: canvas});
-        </script>
+		<h2>Crane 2</h2>
+		<canvas id="video-canvas2" width="200" height="100"></canvas>
+        	<script type="text/javascript" src="jsmpeg.min.js"></script>
+        	<script type="text/javascript">
+                	var canvas = document.getElementById('video-canvas2');
+                	var url = 'ws://'+document.location.hostname+':8084/';
+                	var player = new JSMpeg.Player(url, {canvas: canvas});
+        	</script>
 	</div>
 
 	<div id="cam3">
-	<h2>Crane 3</h2>
-	<canvas id="video-canvas3" width="200" height="100"></canvas>
-        <script type="text/javascript" src="jsmpeg.min.js"></script>
-        <script type="text/javascript">
-                var canvas = document.getElementById('video-canvas3');
-                var url = 'ws://'+document.location.hostname+':8086/';
-                var player = new JSMpeg.Player(url, {canvas: canvas});
-        </script>
+		<h2>Crane 3</h2>
+		<canvas id="video-canvas3" width="200" height="100"></canvas>
+        	<script type="text/javascript" src="jsmpeg.min.js"></script>
+        	<script type="text/javascript">
+                	var canvas = document.getElementById('video-canvas3');
+                	var url = 'ws://'+document.location.hostname+':8086/';
+                	var player = new JSMpeg.Player(url, {canvas: canvas});
+        	</script>
 	</div>
 	
-	 <footer>	
-		<img src="img/hs-offenburg_logo_white.png" width="150"/>
+	<footer>	
+		<img align="right" style="margin:10px 30px" src="img/hs-offenburg_logo_white.png" width="150"/>
 	</footer> 
 </body>
 </html>
