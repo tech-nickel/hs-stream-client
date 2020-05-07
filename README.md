@@ -1,3 +1,3 @@
 # hs-stream-client
 
-Live low latency Stream App for Cams via Decklink into a Webpage with ffmpeg and node.js.
+Live low latency stream app for cams via Decklink into a webpage with ffmpeg and node.js.
