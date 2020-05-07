@@ -1,0 +1,14 @@
+[Unit]
+Description=Cam 2 service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=hs
+ExecStart=/home/hs/scripts/cam2.sh
+
+[Install]
+WantedBy=multi-user.target

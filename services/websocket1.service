@@ -1,0 +1,14 @@
+[Unit]
+Description=Websocket 1 service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=hs
+ExecStart=/home/hs/scripts/websocket1.sh
+
+[Install]
+WantedBy=multi-user.target
